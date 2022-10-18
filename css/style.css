@@ -69,7 +69,7 @@ h1 {
 }
 
 .slideshow__card-visible {
-	display: inline-block;	
+	display: block;	
 }
 
 .slideshow__card {
@@ -145,6 +145,18 @@ h1 {
 .active, .dot:hover {
 	background-color: rgb(172, 172, 172);
 	opacity: 70%;
+}
+
+.slideshow__card {
+	animation-name: fade;
+	animation-duration: 1s;
+}
+
+@keyframes fade {
+	from 	
+	{opacity: 0.6;};
+	to 
+	{opacity: 1;}
 }
 
 /* .fade {
