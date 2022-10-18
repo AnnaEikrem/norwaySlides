@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Slides from Norway</title>
+
+		<link rel="stylesheet" href="./css/reset.css">
+		<link rel="stylesheet" href="./css/style.css">
+	</head>
+
+	<body>
+		<header class="header">
+			<button class="header__button" id="menu-button">Menu</button>
+			<h1>Norway</h1>
+		</header>
+
+		<section class="slideshow-wrapper">
+
+			<figure class="slideshow__card fade" style="display: block;">
+				<img class="slideshow__image" src="./assets/aalesund.jpg" alt="aalesund" >
+				<figcaption class="slideshow__image-text">
+					Scenic view of Aalesund
+				</figcaption>
+			</figure>
+
+			<figure class="slideshow__card fade">
+				<img class="slideshow__image" src="./assets/atlanterhavsVeien.jpg" alt="picture of road" >
+				<figcaption class="slideshow__image-text">
+					Atlanterhavsveien
+				</figcaption>
+			</figure>
+
+			<figure class="slideshow__card fade">
+				<img class="slideshow__image" src="./assets/bridgeNature.jpg" alt="bridge and nature">
+				<figcaption class="slideshow__image-text">
+					Bridge: tre bukkene bruse
+				</figcaption>
+			</figure>
+			<figure class="slideshow__card fade">
+				<img class="slideshow__image" src="./assets/brygge.jpg" alt="colorful houses by the sea" class="slideshow__image">
+				<figcaption class="slideshow__image-text">
+					Colorful houses bye the seaside
+				</figcaption>
+			</figure>
+
+			<figure class="slideshow__card fade">
+				<img class="slideshow__image" src="./assets/northernLights.jpg" alt="picture of the northern lights">
+				<figcaption class="slideshow__image-text">
+					The northern lights
+				</figcaption>
+			</figure>
+
+			<figure class="slideshow__card fade">
+				<img class="slideshow__image" src="./assets/northMountain.jpg" alt="picture of snowy mountains">
+				<figcaption class="slideshow__image-text">
+					Winter mountains
+				</figcaption>
+			</figure>
+
+			<figure class="slideshow__card fade">
+				<img class="slideshow__image" src="./assets/preikestolen.jpg" alt="picture of Prekestolen">
+				<figcaption class="slideshow__image-text">
+					Prekestolen in Rogaland
+				</figcaption>
+			</figure>
+
+			<figure class="slideshow__card fade">
+				<img class="slideshow__image" src="./assets/redNorth.jpg" alt="snow, mountains and red houses">
+				<figcaption class="slideshow__image-text">
+					Winter by the sea
+				</figcaption>
+			</figure>
+
+			<figure class="slideshow__card fade">
+				<img class="slideshow__image" src="./assets/trollstigen.jpg" alt="picture of Trollstigen">
+				<figcaption class="slideshow__image-text">
+					Trollstigen
+				</figcaption>
+			</figure>
+
+			<figure class="slideshow__card fade">
+				<img class="slideshow__image" src="./assets/trolltunga.jpg" alt="picture of Trolltunga">
+				<figcaption class="slideshow__image-text">
+					Trolltunga
+				</figcaption>
+			</figure>
+
+		<!-- The previous and next buttons -->
+		<a class="slideshow__arrows" id="button-previous" href="#" onclick="plussSlides(-1)">&#10094;</a>
+		<a class="slideshow__arrows" id="button-next" href="#" onclick="plussSlides(1)">&#10095;</a>
+	</section>
+
+	<!-- The dots: the key arrows needs to be styled with js.  -->
+	<div class="dots-wrapper">
+		<span class="dot" id="currentSlide(1)"></span>
+		<span class="dot" onclick="currentSlide(2)"></span>
+		<span class="dot" onclick="currentSlide(3)"></span>
+		<span class="dot" onclick="currentSlide(4)"></span>
+		<span class="dot" onclick="currentSlide(5)"></span>
+		<span class="dot" onclick="currentSlide(6)"></span>
+		<span class="dot" onclick="currentSlide(7)"></span>
+		<span class="dot" onclick="currentSlide(8)"></span>
+		<span class="dot" onclick="currentSlide(9)"></span>
+		<span class="dot" onclick="currentSlide(10)"></span>
+	</div>
+
+	<script src="./js/script.js"></script>
+
+		
+	</body>
+</html>

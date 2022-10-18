@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+/*
+	@todo: 
+		- Fikse ting som ikke er responsivt (button, dots wrapper)
+		- Sette @media query: fjerne piler, endre font str etc + endre display i mobile version. 
+		- Fikse farger og figma
+*/
+
+html, body {
+	background-color: #fff;
+	width: 100%;
+	font-size: 20px;
+	font-family: 'Inter', sans-serif;
+}
+
+.header {
+	background-color: #eee;
+	width: 100%;
+	height: 3.3rem;
+	position: absolute;
+	top: 0;
+	z-index: 2;
+	box-shadow: 0 3px 3px 0 #7C7C7C;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+	color: #000;
+	opacity: 70%;
+}
+.header__button {
+	background-color: rgb(192, 192, 192);
+	color: #000;
+	opacity: 70%;
+	position: absolute;
+	left: 2rem;
+	font-size: 0.8rem;
+	padding: 0.3rem 0.65rem;
+	margin-right: 0.1rem;
+	border-radius: 0.3rem;
+	cursor: pointer;
+	transition: 0.6s ease;
+
+	color: #000;
+	opacity: 70%;
+}
+
+.header__button:hover {
+	background-color: #606060;
+}
+
+
+/* Styling slideshow */
+.slideshow-wrapper {
+	position: relative;
+	top: 4rem;
+	width: 70%;
+	margin: 0 auto;
+	background-color: #eee;
+	border-radius: 0.3rem;
+	box-shadow: 0 2px 2px 0 #7C7C7C;
+}
+
+.slideshow__card {
+	overflow: hidden;
+	display: none;	
+}
+
+.slideshow__image {
+	display: flex;
+	margin: 2rem auto;
+	width: 80%;
+	margin: 0.5rem auto;
+}
+
+#button-previous, #button-next {
+	position: absolute;
+	top: 35%;
+	transform: translate(0, .50%);
+	font-size: 3rem;
+	padding: 1rem;
+	cursor: pointer;
+	color: #000;
+	background-color: #7C7C7C;
+	border-radius: 0.2rem;
+	opacity: 70%;
+	transition: 0.3s ease;
+	user-select: none;
+	text-decoration: none;
+}
+
+#button-previous:hover, #button-next:hover {
+	color: #000;
+	background-color: #7C7C7C;
+	border-radius: 0.2rem;
+	opacity: 40%;
+}
+
+#button-previous {
+	left: -6rem;
+}
+
+#button-next {
+	right: -6rem;
+}
+
+.slideshow__image-text {
+	color: #000;
+	opacity: 70%;
+	font-size: 1rem;
+	padding: 1rem;
+	margin: 0 auto 0.5rem 4rem;
+}
+
+.dots-wrapper {
+	text-align: center;
+} 
+
+.dot {
+	display: inline-block;
+	background-color: rgb(15, 15, 15);
+	opacity: 70%;
+	width: 0.75rem;
+	height: 0.75rem;
+	border-radius: 50%;
+	margin: 0.2rem 0.2rem 1.5rem 0.2rem;
+	cursor: pointer;
+	transition: 0.4s ease;
+	z-index: 20;
+}
+
+.active, .dot:hover {
+	background-color: rgb(172, 172, 172);
+	opacity: 70%;
+}
+
+/* .fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+	from {opacity: 0.8}
+	to {opacity: 1;}
+}
+
+@keyframes fade {
+	from {opacity: 0.8}
+	to {opacity: 1;}
+} */
+
