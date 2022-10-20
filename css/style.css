@@ -64,9 +64,9 @@ h1 {
 	box-shadow: 0 0.5rem 1rem #717c90;
 }
 
-.slideshow__card-visible {
+/*.slideshow__card-visible {
 	display: block;	
-}
+}*/
 
 .slideshow__card {
 	overflow: hidden;

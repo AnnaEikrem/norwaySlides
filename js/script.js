@@ -19,7 +19,6 @@ function changeSlides(direction) {
 	showSlide(index += direction);
 }
 
-
 //reset all to inactive and show new active
 function showSlide(newIndex) {
 	let slidesCollection = document.querySelectorAll('.slideshow__card');
@@ -43,30 +42,20 @@ function showSlide(newIndex) {
 
 	//unselect all dots
 	for (let index = 0; index < dots.length; index += 1) {
-		dots[index].className = dots[index].className.replace(" active", ""); 	
+		dots[index].className = dots[index].className.replace(' active', ''); 	
 	}
 	//show slide with active index
-	slidesCollection[index-1].style.display = "block"; 
+	slidesCollection[index-1].style.display = 'block'; 
 
 	//show dot with active index
-	dots[index -1].className += " active";	
+	dots[index -1].className += ' active';	
 
 	//change picture auto
 	//setTimeout('changeSlides(1)', 3000);
 }
 
-//change picture with arrows on keyboard
-const dots = document.querySelectorAll('.dot');
-
-for (let index = 0; index < dots.length; index += 1) {
-	dots[index].addEventListener('click', handleDotsClick);
-}
-
+//change picture with arrows on the keyboard
 window.addEventListener('keydown', handleWindowKeydown);
-
-function handleDotsClick(event) {
-	goToSpecificSlide(event);
-}
 
 function handleWindowKeydown(event) {
 	if (event.key === 'ArrowLeft') {
