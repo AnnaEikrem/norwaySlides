@@ -1,6 +1,24 @@
 let index = 1;
 showSlide(index);
 
+//let dots = document.querySelectorAll('.dot');
+
+//for (let index = 1; index < dots.length; index++) {
+//	let dot = dots[index];
+//	dot.addEventListener('click', changeSlides(index));
+//}
+
+
+
+//function slidesCollectionAuto() {
+//	let slidesCollectionAuto = document.querySelectorAll('.slideshow__card');
+//	changeSlideAuto(+1);
+//	setTimeout(slidesCollectionAuto, 1000);
+//}
+
+
+
+
 //change querySelector to getElementById and then 
 const buttonPrevious = document.querySelector('#previousButton');
 const buttonNext = document.querySelector('#nextButton');
@@ -20,26 +38,12 @@ function changeSlides(direction) {
 	showSlide(index += direction);
 }
 
-
-
-
-
-//const activeDot = document.querySelectorAll('.dot');
-//activeDot.document.addEventListener('click', currentDot);
-
-//function currentDot(currentIndexDot) {
-//	currentIndexDot(" active");
-//}
-
-
-
-
 //reset all to inactive and show new active
 function showSlide(newIndex) {
 	let i;
 	let slidesCollection = document.querySelectorAll('.slideshow__card');
 	
-	let dots = document.querySelectorAll('.dot');
+	let dots = document.querySelectorAll('.dot');	
 
 	//if last picture - change to first
 	if (newIndex > slidesCollection.length) {
@@ -64,8 +68,53 @@ function showSlide(newIndex) {
 	slidesCollection[index-1].style.display = "block"; 
 
 	//show dot with active index
-	dots[index -1].className += " active";
+	dots[index -1].className += " active";	
 }
+
+
+//function changeSlides(direction) {
+//	showSlide(index += direction);
+//	if (i < slidesCollection.length -1) {
+//		i ++;
+//	} else {
+//		i = 0;
+//	}
+//}
+//setTimeout('changeSlides()', 1000);
+
+
+
+
+
+//const i = 0;
+
+//let images = [];
+
+//let image = document.querySelectorAll('.slideshow__card');
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+//function slideInterval = 
+//let slideInterval = newIndex(slidesCollection, 1000);
+
+//console.log(slideInterval);
 
 
 
