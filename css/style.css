@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-/*
-	@todo: 
-		- Fikse ting som ikke er responsivt (button, dots wrapper)
-		- Sette @media query: fjerne piler, endre font str etc + endre display i mobile version. 
-		- Fikse farger og figma
-*/
 
 html, body {
 	background-color: #fff;
@@ -158,7 +152,7 @@ h1 {
 .button__previous {
 	position: fixed;
 	top: 45%;
-	left: 5rem;
+	left: 2rem;
 	opacity: 0.5;
 	z-index: 2;
 	cursor: pointer;
@@ -169,7 +163,7 @@ h1 {
 .button__next {
 	position: fixed;
 	top: 45%;
-	right: 5rem;
+	right: 2rem;
 	opacity: 0.5;
 	z-index: 2;
 	cursor: pointer;
