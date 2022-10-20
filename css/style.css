@@ -1,27 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-/*
-	@todo: 
-		- Fikse ting som ikke er responsivt (button, dots wrapper)
-		- Sette @media query: fjerne piler, endre font str etc + endre display i mobile version. 
-		- Fikse farger og figma
-*/
-
-html, body {
-	background-color: #fff;
-	width: 100%;
+html {
 	font-size: 20px;
+}
+
+body {
+	background-color: rgb(242, 244, 246);
+	width: 100%;
 	font-family: 'Inter', sans-serif;
 }
 
 .header {
-	background-color: #eee;
+	background-color: #fff;
 	width: 100%;
-	height: 3.3rem;
+	height: 2.7rem;
 	position: absolute;
 	top: 0;
-	z-index: 2;
-	box-shadow: 0 3px 3px 0 #7C7C7C;
+	box-shadow: 0.1rem 0.1rem 0.5rem #717c90;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -29,45 +24,44 @@ html, body {
 }
 
 h1 {
-	color: #000;
+	color: rgb(36, 51, 89);
 	opacity: 70%;
 }
 
 .header__button {
-	background-color: rgb(192, 192, 192);
-	color: #000;
-	opacity: 70%;
+	background-color: rgb(232, 233, 235);
 	position: absolute;
 	left: 2rem;
-	font-size: 0.8rem;
-	padding: 0.3rem 0.65rem;
-	margin-right: 0.1rem;
-	border-radius: 0.3rem;
+	padding: 0.4rem 0.6rem;
+	border-radius: 0.2rem;
 	cursor: pointer;
-	transition: 0.6s ease;
-	color: #000;
-	opacity: 70%;
+	transition: 0.6s ease-in-out;
+	transition-duration: 300ms;
+	border-style: none;
+	box-shadow: 0.1rem 0.1rem 0.3rem #717c90;
 }
 
 .header__button:hover {
-	background-color: #606060;
+	background-color: #c4ccd0;
+	opacity: 0.7;
+	transform: scale(1.07);
+	transition: ease-in-out;
+	transition-duration: 200ms;
 }
 
-
-/* Styling slideshow */
 .slideshow-wrapper {
 	position: relative;
 	top: 4rem;
 	width: 80%;
 	margin: 0.5rem auto;
 	height: 43rem;
-	background-color: #eee;
+	background-color: #fff;
 	border-radius: 0.3rem;
 	box-shadow: 0 2px 2px 0 #7C7C7C;
 	max-height: 53rem;
 	max-height: 100%;
 	border-radius: 0.5rem;
-	box-shadow: 0 0.5rem 1rem gray;
+	box-shadow: 0 0.5rem 1rem #717c90;
 }
 
 .slideshow__card-visible {
@@ -89,38 +83,8 @@ h1 {
 	object-fit: contain;
 }
 
-.button-previous, .button-next {
-	position: absolute;
-	top: 35%;
-	transform: translate(0, .50%);
-	font-size: 3rem;
-	padding: 1rem;
-	cursor: pointer;
-	color: #000;
-	background-color: #7C7C7C;
-	border-radius: 0.2rem;
-	opacity: 70%;
-	transition: 0.3s ease;
-	text-decoration: none;
-}
-
-.button-previous:hover, .button-next:hover {
-	color: #000;
-	background-color: #bbbbbb;
-	border-radius: 0.2rem;
-	opacity: 40%;
-}
-
-.button-previous {
-	left: -6rem;
-}
-
-.button-next {
-	right: -6rem;
-}
-
 .slideshow__image-text {
-	color: #000;
+	color: rgb(36, 51, 89);
 	opacity: 70%;
 	font-size: 1rem;
 	padding: 1rem;
@@ -154,27 +118,38 @@ h1 {
 	animation-duration: 1s;
 }
 
-
 .button__previous {
 	position: fixed;
 	top: 45%;
-	left: 5rem;
+	left: 4rem;
 	opacity: 0.5;
 	z-index: 2;
 	cursor: pointer;
 	width: 3rem;
 	height: 3rem;
+	border-style: none;
+	border-radius: 0.2rem;
 }
 
 .button__next {
 	position: fixed;
 	top: 45%;
-	right: 5rem;
+	right: 4rem;
 	opacity: 0.5;
 	z-index: 2;
 	cursor: pointer;
 	width: 3rem;
 	height: 3rem;
+	border-style: none;
+	border-radius: 0.2rem;
+}
+
+.button__previous:hover, .button__next:hover {
+	background-color: #c4ccd0;
+	opacity: 0.7;
+	transform: scale(1.05);
+	transition: ease-in-out;
+	transition-duration: 300ms;
 }
 
 @keyframes fade {
