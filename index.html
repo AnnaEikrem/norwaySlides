@@ -11,12 +11,13 @@
 
 	<body>
 		<header class="header">
-			<button class="header__button" id="menu-button">Slideshow</button>
+			<button class="header__button" id="menu-button">
+				<img src="./assets/close.svg" alt="escape" class="first__img">
+			</button>
 			<h1>Norway</h1>
 		</header>
 
 		<section class="slideshow-wrapper">
-
 			<figure class="slideshow__card">
 				<img class="slideshow__image" src="./assets/aalesund.jpg" alt="aalesund" >
 				<figcaption class="slideshow__image-text">
@@ -86,27 +87,31 @@
 				</figcaption>
 			</figure>
 
-		<!-- The previous and next buttons -->
-		<a class="button-previous" href="" onclick="plussSlides(-1)">&#10094;</a>
-		<a class="button-next" href="" onclick="plussSlides(1)">&#10095;</a>
-	</section>
+			<!-- The previous and next buttons -->
+			<button id="previousButton" class="button__previous">
+				<img src="./assets/return-arrow.svg" alt="previous">
+			</button>
 
-	<!-- The dots: the key arrows needs to be styled with js.  -->
-	<div class="dots-wrapper">
-		<span class="dot" onclick="currentSlide(1)"></span>
-		<span class="dot" onclick="currentSlide(2)"></span>
-		<span class="dot" onclick="currentSlide(3)"></span>
-		<span class="dot" onclick="currentSlide(4)"></span>
-		<span class="dot" onclick="currentSlide(5)"></span>
-		<span class="dot" onclick="currentSlide(6)"></span>
-		<span class="dot" onclick="currentSlide(7)"></span>
-		<span class="dot" onclick="currentSlide(8)"></span>
-		<span class="dot" onclick="currentSlide(9)"></span>
-		<span class="dot" onclick="currentSlide(10)"></span>
-	</div>
+			<button id="nextButton" class="button__next">
+				<img src="./assets/jump-arrow.svg" alt="next">
+			</button>
+		</section>
 
-	<script src="./js/script.js"></script>
+		<!-- The dots: the key arrows needs to be styled with js.  -->
+		<div class="dots-wrapper">
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+		</div>
 
-		
+		<script src="./js/script.js"></script>
+
 	</body>
 </html>
