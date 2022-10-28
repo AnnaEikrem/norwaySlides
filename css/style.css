@@ -108,7 +108,7 @@ h1 {
 	z-index: 20;
 }
 
-.active, .dot:hover {
+.dot-active, .dot:hover {
 	background-color: rgb(15, 15, 15);
 	opacity: 70%;
 }

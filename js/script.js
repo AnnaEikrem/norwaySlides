@@ -2,6 +2,7 @@
 const mySlideshowCards = document.querySelectorAll('.slideshow__card');
 const myButtonPrevious = document.querySelector('#previousButton');
 const myButtonNext = document.querySelector('#nextButton');
+const myButtonDots = document.querySelectorAll('.dot');
 
 //Event Listeners
 myButtonPrevious.addEventListener('click', handleButtonPreviousClick);
@@ -41,8 +42,16 @@ function updateSlideshowHTML() {
 	for (index = 0; index < mySlideshowCards.length; index += 1) {
 		mySlideshowCards[index].classList.remove('slideshow__card-visible');
 	}
+
+	for (index = 0; index < myButtonDots.length; index += 1) {
+		myButtonDots[index].classList.remove('dot-active');
+	}
+
 	mySlideshowCards[currentSlideIndex].classList.add('slideshow__card-visible');
+	myButtonDots[currentSlideIndex].classList.add('dot-active');
 }
+
+
 
 
 
