@@ -1,156 +1,66 @@
-//Variables
-const mySlideshowCards = document.querySelectorAll('.slideshow__card');
-const myButtonPrevious = document.querySelector('#previousButton');
-const myButtonNext = document.querySelector('#nextButton');
-const myButtonDots = document.querySelectorAll('.dot');
+let index = 1;
+showSlide(index);
 
-//Event Listeners
-myButtonPrevious.addEventListener('click', handleButtonPreviousClick);
-myButtonNext.addEventListener('click', handleButtonNextClick);
+const buttonPrevious = document.querySelector('#previousButton');
+const buttonNext = document.querySelector('#nextButton');
 
-//Event handlers
-function handleButtonPreviousClick(event) {
-	decreaseCurrentSlideIndex();
-	updateSlideshowHTML();
+buttonPrevious.addEventListener('click', handleButtonPreviousOnClick);
+buttonNext.addEventListener('click', handleButtonNextOnClick);
+
+function handleButtonPreviousOnClick() {
+	changeSlides(-1);
 }
 
-function handleButtonNextClick(event) {
-	increaseCurrentSlideIndex();
-	updateSlideshowHTML();
+function handleButtonNextOnClick() {
+	changeSlides(1);
 }
 
-let currentSlideIndex = 0;
+function changeSlides(direction) {
+	showSlide(index += direction);
+}
 
-//Methods
-function decreaseCurrentSlideIndex() {
-	if (currentSlideIndex > 0) {
-		 currentSlideIndex -= 1;
-	} else {
-		currentSlideIndex = mySlideshowCards.length -1;
+//reset all to inactive and show new active
+function showSlide(newIndex) {
+	let slidesCollection = document.querySelectorAll('.slideshow__card');
+	let dots = document.querySelectorAll('.dot');	
+
+	//if last picture - change to first
+	if (newIndex > slidesCollection.length) {
+		index = 1;
+	} 
+
+	//if first picture - change to last
+	if (newIndex < 1) {
+		index = slidesCollection.length;
 	}
-}
-
-function increaseCurrentSlideIndex() {
-	if (currentSlideIndex < mySlideshowCards.length -1) {
-		currentSlideIndex += 1;
-	} else {
-		currentSlideIndex = 0;
-	}
-}
-
-function updateSlideshowHTML() {
-	for (index = 0; index < mySlideshowCards.length; index += 1) {
-		mySlideshowCards[index].classList.remove('slideshow__card-visible');
+	
+	//hide all slides
+	for (let index = 0; index < slidesCollection.length; index += 1) {
+		slidesCollection[index].style.display = "none"; 
 	}
 
-	for (index = 0; index < myButtonDots.length; index += 1) {
-		myButtonDots[index].classList.remove('dot-active');
+	//unselect all dots
+	for (let index = 0; index < dots.length; index += 1) {
+		dots[index].className = dots[index].className.replace(' dot-active', ''); 	
 	}
+	//show slide with active index
+	slidesCollection[index-1].style.display = 'block'; 
 
-	mySlideshowCards[currentSlideIndex].classList.add('slideshow__card-visible');
-	myButtonDots[currentSlideIndex].classList.add('dot-active');
+	//show dot with active index
+	dots[index -1].className += ' dot-active';	
+
+	//change picture auto
+	//setTimeout('changeSlides(1)', 3000);
 }
 
+//change picture with arrows on the keyboard
+window.addEventListener('keydown', handleWindowKeydown);
 
+function handleWindowKeydown(event) {
+	if (event.key === 'ArrowLeft') {
+		changeSlides(-1);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-////Variables
-//const slideshowCards = document.querySelectorAll('.slideshow__card');
-//const buttonPrevious = document.querySelector('#previousButton');
-//const buttonNext = document.querySelector('#nextButton');
-////const dots = document.querySelectorAll('.dot')
-
-////Event listeners
-//buttonPrevious.addEventListener('click', handleButtonPreviousClick);
-//buttonNext.addEventListener('click', handleButtonNextClick);
-////dots.addEventListener('keyup', handleButtonDotClick);
-
-////Event handlers
-//function handleButtonPreviousClick(event) {
-//	decreaseCurrentSlideIndex();
-//	updateSlideHTML();
-//}
-
-//function handleButtonNextClick(event) {
-//	increaseCurrentSlideIndex();
-//	updateSlideHTML();
-//}
-
-////Variables
-//let currentSlideIndex = 0;
-
-////Methods
-
-//function decreaseCurrentSlideIndex() {
-//	if (currentSlideIndex > 0) {
-//		currentSlideIndex -= 1;
-//	} else {
-//		currentSlideIndex = slideshowCards.length - 1;
-//	}
-//	console.log(`go to slide index ${currentSlideIndex}`);
-//}
-
-//function increaseCurrentSlideIndex() {
-//	if (currentSlideIndex < slideshowCards.length - 1) {
-//		currentSlideIndex += 1;
-//	} else {
-//		currentSlideIndex = 0;
-//	}
-//	console.log(`go to slide index ${currentSlideIndex}`);
-//}
-
-//function changeCurrentSlideIndex(index) {
-//	currentSlideIndex = index;
-//}
-
-////Argument changeCurrentSlideIndex(1)
-
-
-//function updateSlideHTML() {
-//	for(let index = 0; index < slideshowCards.length; index += 1) {
-//		slideshowCards[index].classList.remove('slideshow__card-visible');
-//	}
-
-//	slideshowCards[currentSlideIndex].classList.add('slideshow__card-visible');
-//}
-
-
-
-
+	} else if (event.key === 'ArrowRight') {
+		changeSlides(1);
+	}
+}
