@@ -39,7 +39,7 @@ function increaseCurrentSlideIndex() {
 }	
 
 function updateSlideshowHTML() {
-	for (index = 0; index < mySlideshowCards.length; index += 1) {
+	for (let index = 0; index < mySlideshowCards.length; index += 1) {
 		mySlideshowCards[index].classList.remove('slideshow__card-visible');
 	}
 
