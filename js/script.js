@@ -36,7 +36,7 @@ function increaseCurrentSlideIndex() {
 	} else {
 		currentSlideIndex = 0;
 	}
-}
+}	
 
 function updateSlideshowHTML() {
 	for (index = 0; index < mySlideshowCards.length; index += 1) {
@@ -63,42 +63,6 @@ function handleWindowKeydown(event) {
 		updateSlideshowHTML();
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
